@@ -1,0 +1,85 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+void print(int a)
+{
+    if(a==1)
+    {
+        cout<<"one\n";
+    }
+    else if(a==2)
+    {
+        cout<<"two\n";
+    }
+    else if(a==2)
+    {
+        cout<<"two\n";
+    }
+    else if(a==3)
+    {
+        cout<<"three\n";
+    }
+    else if(a==4)
+    {
+        cout<<"four\n";
+    }
+    else if(a==5)
+    {
+        cout<<"five\n";
+    }
+    else if(a==6)
+    {
+        cout<<"six\n";
+    }
+    else if(a==7)
+    {
+        cout<<"seven\n";
+    }
+    else if(a==8)
+    {
+        cout<<"eight\n";
+    }
+    else if(a==9)
+    {
+        cout<<"nine\n";
+    }
+}
+void check(int a)
+{int i;
+    if(a>=1 && a<=9)
+    {
+        for(i=a;i<10;i++)
+        {
+            print(i);
+        }
+    }
+    else
+    {for(i=10;i<=a;i++)
+    {
+        if(i%2==0)
+        {
+            cout<<"even\n";
+        }
+        else
+        {
+            cout<<"odd\n";
+        }
+    }
+    }
+}
+int main() {
+    int a,b;
+    scanf("%d %d",&a,&b);
+    if(a<=9 && b<=9)
+    {
+        print(a);
+        print(b);
+    }
+    else
+    {
+    check(a);
+    check(b);
+    return 0;
+    }
+}
+
