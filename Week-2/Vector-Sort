@@ -1,0 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    vector<int> v;
+    int n,i=0,x;
+    cin>>n;
+    while(i<n)
+    {
+        cin>>x;
+        v.push_back(x);
+        i++;
+    }
+    sort(v.begin(),v.end());
+    for(auto ip=v.begin();ip!=v.end();++ip)
+    {
+        cout<<*ip<<" ";
+    }
+    return 0;
+}
