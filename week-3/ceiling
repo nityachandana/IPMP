@@ -1,0 +1,23 @@
+class Solution{
+ int ceilsearch(vector<int>& nums,int l,int h,int x)
+ {
+   if(x<=nums[l])
+   {
+     return l;
+   }
+   if(x>nums[h])
+   {
+    return -1;
+   }
+   int m=(l+m)/2;
+   if(nums[m]>=x && x>nums[m-1])
+   {
+     return m;
+   }
+   else if(nums[m]<x)
+   {
+     return ceilsearch(nums,m+1,h,x);
+   }
+   else return ceilsearch(nums,l,m-1,x);
+ }
+};
