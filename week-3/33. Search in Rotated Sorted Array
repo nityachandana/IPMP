@@ -1,0 +1,46 @@
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n=nums.size();
+        if(n==0)
+        {
+            return -1;
+        }
+        int l=0,h=n-1;
+        while(l<=h)
+        {
+            int first=nums[0];
+            int m=l+(m-l)/2;
+            int value=nums[m];
+            if(target==value)
+            {
+                return m;
+            }
+            bool am_big=value>=first;
+            bool target_big=target>=first;
+            if(am_big==target_big)
+            {
+                if(target>value)
+                {
+                    l=m+1;
+                }
+                else
+                {
+                    h=m-1;
+                }
+            }
+            else 
+            {
+                if(am_big)
+            {
+                l=m+1;
+            }
+            else 
+            {
+                h=m-1;
+            }
+            }
+        }
+        return -1;
+    }
+};
