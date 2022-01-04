@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+int a(int n)
+{
+    int mask=n>>((sizeof(int)*8)-1);
+    return ((n+mask)^mask);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int x=a(n);
+    cout<<x;
+    return 0;
+}
