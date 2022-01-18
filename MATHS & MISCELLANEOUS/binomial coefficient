@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+int binomial_coefficient(int n,int r)
+{int sum=1;
+  if(r>n-r)
+  {
+      r=n-r;
+  }
+    for(int i=0;i<r;i++)
+    {
+        sum*=(n-i);
+        sum/=(i+1);
+    }
+    return sum;
+}
+int main()
+{int n,r;
+    cout<<"Enter values of n,r:";
+    cin>>n>>r;
+    cout<<"binomial coefficient of "<<n<<"C"<<r<<" is "<<binomial_coefficient(n,r);
+    return 0;
+}
