@@ -1,0 +1,45 @@
+#include <stdio.h>
+int find_pivot(int a[],int l,int h)
+{
+    int i=l-1,j,key,temp;
+    key=a[h];
+    for(j=l;j<h-1;j++)
+    {
+        if(a[j]<key)
+        {
+            i++;
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+        }
+    }
+    temp=a[i+1];a[i+1]=a[h];a[h]=temp;
+    return i+1;
+}
+void quicksort(int a[],int l,int h)
+{  if(l<=h)
+{
+    int pivot=find_pivot(a,l,h);
+    quicksort(a,l,pivot-1);
+    quicksort(a,pivot+1,h);
+}
+}
+int main()
+{int n;
+    printf("enter array size:");
+    scanf("%d",&n);
+    int a[n];
+    printf("enter array elements:");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+   printf("sorted array:");
+   quicksort(a,0,n-1);
+   for(int i=0;i<n;i++)
+   {
+       printf("%d ",a[i]);
+   }
+    return 0;
+}
+
