@@ -1,0 +1,42 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+void find(int a[],int n,int k)
+{
+    map<int,pair<int,int>> mp;
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            mp[a[i]+a[j]]={i,j};
+        }
+    }
+    int sum=0;
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            sum=a[i]+a[j];
+            if(mp.find(k-sum)!=mp.end())
+            {
+                pair<int,int> p=mp[k-sum];
+                if(p.first!=i && p.second!=i && p.first!=j && p.second!=j)
+                {
+                    cout<<a[i]<<","<<a[j]<<","<<a[p.first]<<","<<a[p.second]<<endl;
+                    return;
+                }
+            }
+        }
+    }
+}
+
+int main()
+{
+    int a[]={6,8,9,3,11,34,2,4};
+    int n=sizeof(a)/sizeof(a[0]);
+    int k=45;
+    find(a,n,k);
+
+    return 0;
+}
